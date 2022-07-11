@@ -1,0 +1,49 @@
+﻿@page
+@model PizzaDelivery.Pages.Forms.CustomPizzaModel
+@{
+}
+
+
+<div class="text-center">
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Create Your Own Pizza</h1>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <input type="text" asp-for="Pizza.Name" placeholder="Give your pizza a name" />
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.Peperoni" placeholder="Peperoni" />
+                    <label class="mr-2">Peperoni</label>
+                </div>
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.Mashrrom" placeholder="Mashrrom" />
+                    <label class="mr-2">Mashrrom</label>
+                </div>
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.TomatSouce" placeholder="TomatSouce" />
+                    <label class="mr-2">TomatSouce</label>
+                </div>
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" />
+                    <label class="mr-2">Ham</label>
+                </div>
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.Cheese" placeholder="Cheese" />
+                    <label class="mr-2">Cheese</label>
+                </div>
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.Beef" placeholder="Beef" />
+                    <label class="mr-2">Beef</label>
+                </div>
+                <div class="row mb-2">
+                    <input type="checkbox" asp-for="Pizza.Pineppel" placeholder="Pineppel" />
+                    <label class="mr-2">Pineppel</label>
+                </div>
+               
+                <button class="btn btn-primary mt-1" type="submit">Order now</button>
+            </form>
+        </div>
+    </div>
+</div>

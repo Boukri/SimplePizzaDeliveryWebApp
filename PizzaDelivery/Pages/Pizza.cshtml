@@ -1,0 +1,42 @@
+﻿@page
+@model PizzaDelivery.Pages.PizzaModel
+@{
+}
+
+<div class="text-center">
+    <div>
+        <h1 class="display-4 text-capitalize text-black-50">Selection of pizzas</h1>
+        <h4>Choose one, or try pizza builder</h4>
+        <p class="smallText">Only one pizza per order</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="w-100 row myDiv">
+                    <div class="col-4">
+                        <img src="~/Images/Pizzas/Create.png" class="w-100" />
+                    </div>
+                    <div class="col-8 alig-items-center">
+                        <div class="align-middle myText">
+                            <h3 style="text-align:left;">Create your own pizza</h3>
+                            <p style="text-align:left">Make yourown pizza with pizza maker</p>
+                            <a class="btn btn-primary" style="float:left" asp-area="" asp-page="Forms/CustomPizza">Try now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @for (int i = 0; i < Model.PizzaList.Count; i++)
+            {
+                var imagePath = "~/Images/Pizzas/" + (Model.PizzaList[i].ImageTitel) + ".png";
+                <div class="col-4 mb-5" style="border-radius: 7px;">
+                    <img src="@imagePath" class="w-100" asp-append-version="true" />
+                    <a class="btn btn-primary m-1" asp-area="" asp-page="/Checkout/Chekcout" 
+                       asp-route-ImageTitel="@Model.PizzaList[i].ImageTitel" 
+                       asp-route-FinalPrice="@Model.PizzaList[i].FinalPrice">Ge me!</a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>

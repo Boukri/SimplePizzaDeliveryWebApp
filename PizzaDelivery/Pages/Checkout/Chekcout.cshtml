@@ -1,0 +1,18 @@
+﻿@page
+@model PizzaDelivery.Pages.Checkout.ChekcoutModel
+@{
+}
+ <h1>Your order</h1>
+@{ 
+    var imagePath = "~/Images/Pizzas/" + (@Model.ImageTitel) + ".png";
+    Console.WriteLine(imagePath);
+}
+<div class="align-content-center">
+    <div class="col-3 mx-auto mb-5">
+        <img class="w-100" asp-append-version="true" src="@imagePath"/>
+        <p>Your order for the @Model.Name pizza is ready</p>
+        <p>Total price :@Model.FinalPrice DA</p>
+        <br />
+        <a class="btn alert-primary mt-1 mx-auto" asp-area="" asp-page="Thankyou">Confirm order</a>
+    </div>
+</div>
